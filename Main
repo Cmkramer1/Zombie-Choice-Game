@@ -1,0 +1,97 @@
+#testing 
+print("Oh hello there..\n")
+
+userName = str(input("This is a simple game of choices.\n\nI will start by asking your name\n\n"))
+
+print("\n" + userName + " huh?...\n\n...What a boring name...\n")
+
+blank = str(input("Anyways " + userName + ", let's begin.\n\n----press enter to continue----"))
+
+AnsValid = 0
+
+#AnsValid is just a boolean, 0 being false, 1 being true. Used for the while loop below
+weapon = ""
+
+while AnsValid == 0: #weapon choosing query
+    userWeapon = int(input("\n      ...\n      ...\n      ...\n\nIt's the zombie apocalypse. You have a katana(1), a handgun(2),\nand a spiked-club(3) in front of you.\n      ...\nWhich will you choose " + userName + "?\n\n----enter 1, 2, or 3 to continue----\n"))
+    if (userWeapon == 1):
+        AnsValid = 1
+        weapon = "katana"
+    elif (userWeapon == 2):
+        AnsValid = 1
+        weapon = "handgun"
+    elif (userWeapon == 3):
+        AnsValid = 1
+        weapon = "spiked-club"
+    else:
+        print ("\n\n\n\n----Try again----")
+        blank1 = input("----press enter to continue----")
+
+
+
+print("Oh, the " + weapon + ". Interesting choice...")
+blank2 = input("\n----press enter to continue----\n\n")
+print("With the weapon in your hands you feel a sense of newfound courage..\n\nYou look around. You seem to be in a dusty room in some old facility.\n...Maybe a warehouse?")
+
+blank2 = input("\n----press enter to continue----\n\n")
+
+choice1 = int(input("You need to escape the room, but the only door in here is locked.\nShould you (1)look for the keycard, or (2)bust down the door?\n\n----enter 1 or 2 to continue----\n"))
+
+if choice1 == 1: #choice of keycard
+    print("Probably the wiser choice. We don't want to attract any zombies with noise...")
+    print("After rummaging through some drawers, you find a card.\n      |\n      |\n      |\n      *slide....CLICK*\n\n")
+    blank4 = input("\n----press enter to continue----\n")
+    print("The door swings open. \n\nThere is a darker hallway with bloodstains on your left.(1)\nThere is a window in front of you that you could jump out.(2)\nThere is a normal hallway to the right.(3)")
+    
+    choice2 = int(input("Which way will you go?\n\n----Enter 1, 2, or 3 to continue----\n"))
+    
+    if choice2 == 1:
+        if userWeapon == 3:
+            print("Surprise! You're surrounded by zombies.\nBut with that powerful club you take out enough to get out of there in time.\n")
+            print("After going down the hall a bit more..")
+            print("you died.\n\n      x_x   ")
+        else:
+            print("This wasn't a trick question...\n\nYou got surrounded by the obvious zombies and died.\n\n     x_x")
+    elif choice2 == 2:
+        print("Ballsy. You grab a nearby chair, smash the window, and jump out.\n\n      |||||||\n      |||||||\n      |||||||\n\n      *whoosh*")
+        blank5 = input("----press enter to continue----")
+        print("Congrats! The building was only two stories tall and you landed in a dumpster!")
+        print("You smell like crap now, but at least you're free.\n\n------CONGRATS YOU WON--------")
+    elif choice2 == 3:
+        print("Better safe than sorry\nYou pick up a flashlight, and walk down the hallway...")
+        blank6 = input("\n----press enter to continue----\n")
+        print("end of coded story")
+    else:
+        print ("You know what? You die by default.\n\n      x_x    ")
+    
+elif choice1 == 2: #choice of slamming door down
+    print("Tough guy huh?\nYou lean back, then slam the door with your shoulder as hard as you can!\n\n      W-H-A-M!!\n\n      WHAM!\n\n      WHam!\n\n      wham..\n\nYou can hear the sound echoeing down the newly revealed hallway \nScreeching sounds fill your ears.")
+    blank3 = input("\n----press enter to continue----\n")
+    print("The zombies are crawling down the hallway towards you now.\nThere's at least thirty on both sides..")
+    
+    blank7 = input("\n----press enter to continue----\n")
+    
+    choice3 = int(input("Do you attack with your " + weapon + "? Or do you jump out the window in front of you?\n\n----Enter 1 for attack, 2 for jump----\n"))
+    if choice3 == 1:
+        if userWeapon == 1:
+            print("With the elegance of a flowing river you slice through the zombies.\n\nThere are too many, and you are forced down a set of stairs you didn't see previously.")
+        if userWeapon == 2:
+            print("Heh, you got this.\n*you think to yourslef as you cock the handgun, imagining yourself to be a badass*\n\nBam! Bam!\nBam Bam!\nOops, you forgot you suck at aiming!")
+            print("Not only that, the noise is attracting more zombies!")
+            
+            blank9 = input("\n----press enter to continue----")
+            print("Bam! Bam!\nBam!\nYou feel teeth sink into your neck from behind. You're dead\n\n     x_x")
+        if userWeapon == 3:
+            print("These suckas are no match for that bat\n")
+            if userName == "Cameron":
+                print("Wow is that the legendary Cameron? You killed the zombies and escaped. Yup. That easy.")
+            else:
+                print("end of coded section")
+                
+    elif choice3 == 2:
+            print("You jump out the window!!\n      |||||||\n      |||||||\n      |||||||\n      *WHOOSH!*")
+            blank9 = input("\n----press enter to continue----\n")
+            print("You hit the ground to hard and broke your ankles. \nFunny enough, you just missed a dumpster that would have cushioned your fall...")
+            print("Unable to walk, you get eaten later that night.\n       x_x")
+else:
+    print ("You know what? You die by default.\n\n      x_x    ")
